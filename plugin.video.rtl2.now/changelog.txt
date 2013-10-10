@@ -1,0 +1,29 @@
+[B]Version v1.88[/B]
+- Frodo python fix 2.1.0
+- 10.3.2013
+
+[B]Version v1.85[/B]
+- Frodo fix
+- 15.10.2012
+
+[B]Version v1.84[/B]
+- defs fixed 
+- 19.04.2012
+
+[B]Version v1.83[/B]
+- nightly regex fixed 
+- 18.04.2012
+
+[B]Version v1.81[/B]
+- thx to AddonScriptorDE for playlist-idea
+- 12.04.2012
+
+[B]Version v1.80[/B]
+- regex fixed
+- thx to EggBaconSausageAndSpam :) for slightly recoding 
+- 10.04.2012
+
+[B]Version v1.7[/B]
+- initial Version
+- thx to the community
+- 16.02.2012
