@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<addon id="plugin.video.rtl.now"
-	   name="RTL now"
+<addon id="plugin.video.superrtl.now"
+	   name="SuperRTL now"
 	   version="1.0"
-	   provider-name="tuffnerdstuff">
+	   provider-name="chmee phreekz">
   <requires>
     <import addon="xbmc.python" version="2.1.0"/>
   </requires>
@@ -11,8 +11,8 @@
     	<provides>video</provides>
   </extension>
   <extension point="xbmc.addon.metadata">
-    <summary>RTL now : german free streams content</summary>
-    <description>Provides access to RTLnow on demand streams. This code has been forked from the code provided on phreekz.de</description>
+    <summary>SuperRTL now : german free stream content</summary>
+    <description>Provides access to SuperRTL on demand streams. This code has been forked from the code provided on phreekz.de</description>
     <platform>all</platform>
   </extension>
 </addon>

@@ -2,7 +2,7 @@
 <addon id="plugin.video.vox.now"
        name="VOX now"
        version="1.0"
-       provider-name="tuffnerdstuff">
+       provider-name="chmee phreekz">
   <extension point="xbmc.python.pluginsource"
             library="default.py">
     <provides>video</provides>

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <addon id="plugin.video.rtl2.now"
 	   name="RTL2 now"
-	   version="1.90"
-	   provider-name="chmee phreekz">
+	   version="1.0"
+	   provider-name="tuffnerdstuff">
   <requires>
     <import addon="xbmc.python" version="2.1.0"/>
   </requires>
@@ -12,7 +12,7 @@
   </extension>
   <extension point="xbmc.addon.metadata">
     <summary>SuperRTL now : german free stream content</summary>
-    <description>free on demand streams</description>
+    <description>Provides access to RTL2 on demand streams. This code has been forked from the code provided on phreekz.de</description>
     <platform>all</platform>
   </extension>
 </addon>
