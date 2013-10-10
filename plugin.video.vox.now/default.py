@@ -66,9 +66,9 @@ def showSeries(urlS):
 	print match
 	for m in match:
 		print m
-		if "kostenlos" in m[4]:
+		if "kostenlos" in m[3]:
 		##xbmcplugin.addDirectoryItem(handle=int(sys.argv[1]), url=url, listitem=m[3]+" "+decode_htmlentities(m[2]), isFolder=False)
-			addPlayableItem(decode_htmlentities(m[2])+" - "+remHTML(m[3]), {"urlV": m[1], "vidN": m[2]})
+			addPlayableItem(decode_htmlentities(m[1])+" - "+remHTML(m[2]), {"urlV": m[0], "vidN": m[1]})
 		##print m[2]  
 	print "--- showSeries ok"	
 	xbmcplugin.endOfDirectory(thisPlugin)
