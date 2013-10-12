@@ -16,7 +16,12 @@ mv addons.xml.md5 ../$REPO_DIR
 
 # Create ZIP files
 for d in $(find . -mindepth 1 -maxdepth 1 -type d);
-do mkdir ../$REPO_DIR/$d; zip -r ../$REPO_DIR/$d/$d.zip $d;
+do mkdir ../$REPO_DIR/$d; 
+#VERSION=$(cat $d/addon.xml | sed ':a;N;$!ba;s/\n/ /g' | sed 's/.*version="\([^"]*\)".*version$/\1/')
+VERSIONS=( $(cat $d/addon.xml | grep version= | sed 's/.*version="\([^"]*\)".*/\1/') )
+VERSION=${VERSIONS[1]}
+zip -r ../$REPO_DIR/$d/$d-$VERSION.zip $d;
+# echo ../$REPO_DIR/$d/$d-"$VERSION".zip $d;
 done
 cd ..
 

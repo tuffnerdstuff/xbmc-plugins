@@ -1,16 +1,19 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <addons>
 <addon id="plugin.video.vox.now"
-       name="VOX now"
-       version="1.1"
-       provider-name="tuffnerdstuff">
+	   name="VOX now"
+	   version="1.1"
+	   provider-name="tuffnerdstuff">
+  <requires>
+    <import addon="xbmc.python" version="2.1.0"/>
+  </requires>
   <extension point="xbmc.python.pluginsource"
-            library="default.py">
-    <provides>video</provides>
+			 library="default.py">
+    	<provides>video</provides>
   </extension>
   <extension point="xbmc.addon.metadata">
-	<summary>VOX now : kostenlose Serien von der Seite gestreamt</summary>
-	<description>Provides access to VOX on demand streams. This code has been forked from the code provided on phreekz.de</description>
+    <summary>VOX now : german free stream content</summary>
+    <description>Provides access to VOX on demand streams. This code has been forked from the code provided on phreekz.de</description>
     <platform>all</platform>
   </extension>
 </addon>
