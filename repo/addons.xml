@@ -69,11 +69,11 @@
   </extension>
 </addon>
 
-  <addon id="repository.tuffnerdstuff" name="tuffnerdstuff's repo" version="1.5.0" provider-name="Tuff Nerdstuff">
+  <addon id="repository.tuffnerdstuff" name="tuffnerdstuff's repo" version="1.5.1" provider-name="Tuff Nerdstuff">
     <extension point="xbmc.addon.repository" name="tuffnerdstuff's repo">
     <info>https://raw.github.com/tuffnerdstuff/xbmc-plugins/master/repo/addons.xml</info>
     <checksum>https://raw.github.com/tuffnerdstuff/xbmc-plugins/master/repo/addons.xml.md5</checksum>
-    <datadir zip="true">https://raw.github.com/tuffnerdstuff/xbmc-plugins/master/repo/</datadir>
+    <datadir zip="true">https://raw.github.com/tuffnerdstuff/xbmc-plugins/master/repo</datadir>
     </extension>
     <extension point="xbmc.addon.metadata">
     <summary>tuffnerdstuff's XBMC repo</summary>
