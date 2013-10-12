@@ -1,5 +1,23 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <addons>
+<addon id="plugin.video.sandbox"
+	   name="Sandbox Plugin"
+	   version="0.1"
+	   provider-name="tuffnerdstuff">
+  <requires>
+    <import addon="xbmc.python" version="2.1.0"/>
+  </requires>
+  <extension point="xbmc.python.pluginsource"
+			 library="default.py">
+    	<provides>video</provides>
+  </extension>
+  <extension point="xbmc.addon.metadata">
+    <summary>A Sandbox Plugin</summary>
+    <description>A Plugin to test out stuff</description>
+    <platform>all</platform>
+  </extension>
+</addon>
+
 <addon id="plugin.video.vox.now"
 	   name="VOX now"
 	   version="1.1"
