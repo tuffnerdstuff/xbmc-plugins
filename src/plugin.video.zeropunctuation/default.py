@@ -6,7 +6,7 @@ def CATEGORIES():
                        
 def INDEX(url):
         data=scraper.scrape()
-        for name,url,img,date in match:
+        for name,url,img,date in data:
                 addDir(name,url,2,img)
 
 def VIDEOLINKS(url,name):
