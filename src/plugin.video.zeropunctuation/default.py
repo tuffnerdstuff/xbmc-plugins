@@ -4,19 +4,13 @@ def CATEGORIES():
         addDir('Zero Punctuation','http://www.escapistmagazine.com/videos/view/zero-punctuation',1,'')
                        
 def INDEX(url):
-        data=scraper.scrape()
+        data=scraper.scrape(url)
         for name,url,img,date in data:
                 addDir(name,url,2,img)
 
 def VIDEOLINKS(url,name):
-        req = urllib2.Request(url)
-        req.add_header('User-Agent', 'Mozilla/5.0 (Windows; U; Windows NT 5.1; en-GB; rv:1.9.0.3) Gecko/2008092417 Firefox/3.0.3')
-        response = urllib2.urlopen(req)
-        link=response.read()
-        response.close()
-        match=re.compile('').findall(link)
-        for url in match:
-                addLink(name,url,'')
+        video_url=scraper.scrapeVideoLink(url)
+        addLink(name,video_url,'')
         
 
                 
