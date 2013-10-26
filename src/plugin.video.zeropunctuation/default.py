@@ -1,7 +1,7 @@
 import urllib,urllib2,re,xbmcplugin,xbmcgui,scraper
 
 def CATEGORIES():
-        addDir('Zero Punctuation','',1,'')
+        addDir('Zero Punctuation','http://www.escapistmagazine.com/videos/view/zero-punctuation',1,'')
                        
 def INDEX(url):
         data=scraper.scrape()
