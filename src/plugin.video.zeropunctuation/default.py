@@ -1,7 +1,5 @@
 import urllib,urllib2,re,xbmcplugin,xbmcgui,scraper
 
-HANDLE = -666
-
 def CATEGORIES():
         addDir('Zero Punctuation','http://www.escapistmagazine.com/videos/view/zero-punctuation',1,'')
                        
@@ -13,11 +11,11 @@ def INDEX(url):
 def VIDEOLINKS(url,name):
         addLink(name,url,3,'')
         
-def resolveVideoLink(url):
+def resolveVideoLink(url,handle):
 	video_url=scraper.scrapeVideoLink(url)
 	listitem = xbmcgui.ListItem(path=video_url)
 	print "[RESOLVEURL]" + video_url
-	return xbmcplugin.setResolvedUrl(HANDLE, True, listitem)
+	return xbmcplugin.setResolvedUrl(handle, True, listitem)
 
                 
 def get_params():
@@ -42,7 +40,7 @@ def get_params():
 
 
 def addLink(name,url,mode,iconimage):
-	u=sys.argv[0]+"?url="+urllib.quote_plus(url)+"&mode="+str(mode)+"&name="+urllib.quote_plus(name)        
+	u=sys.argv[0]+"?url="+urllib.quote_plus(url)+"&mode="+str(mode)+"&name="+urllib.quote_plus(name)+"&handle="+sys.argv[1]        
 	ok=True
         liz=xbmcgui.ListItem(name, iconImage="DefaultVideo.png", thumbnailImage=iconimage)
         liz.setInfo( type="Video", infoLabels={ "Title": name } )
@@ -82,8 +80,7 @@ print "URL: "+str(url)
 print "Name: "+str(name)
 
 if mode==None or url==None or len(url)<1:
-        print "[CATEGORIES] handle" + sys.argv[1]
-	HANDLE=int(sys.argv[1])
+        print "[CATEGORIES]"
         CATEGORIES()
        
 elif mode==1:
@@ -96,7 +93,8 @@ elif mode==2:
 
 elif mode==3:
 	print "[RESOLVEURL] "+url
-	resolveVideoLink(url)
+	handle=int(params["handle"])
+	resolveVideoLink(url,handle)
 
 
 
