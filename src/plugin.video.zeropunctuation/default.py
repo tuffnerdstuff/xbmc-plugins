@@ -9,9 +9,13 @@ def INDEX(url):
                 addDir(name,info_url,2,img)
 
 def VIDEOLINKS(url,name):
-        video_url=scraper.scrapeVideoLink(url)
-        addLink(name,video_url,'')
+        addLink(name,url,3,'')
         
+def resolveVideoLink(plugin_path,url):
+	video_url=scraper.scrapeVideoLink(url)
+	listitem = xbmcgui.ListItem(path=plugin_path)
+	listItem.setPath(video_url)
+	xbmcplugin.setResolvedUrl(int(sys.argv[1]), True, listitem)
 
                 
 def get_params():
@@ -35,11 +39,12 @@ def get_params():
 
 
 
-def addLink(name,url,iconimage):
-        ok=True
+def addLink(name,url,mode,iconimage):
+	u=sys.argv[0]+"?url="+urllib.quote_plus(url)+"&mode="+str(mode)+"&name="+urllib.quote_plus(name)        
+	ok=True
         liz=xbmcgui.ListItem(name, iconImage="DefaultVideo.png", thumbnailImage=iconimage)
         liz.setInfo( type="Video", infoLabels={ "Title": name } )
-        ok=xbmcplugin.addDirectoryItem(handle=int(sys.argv[1]),url=url,listitem=liz)
+        ok=xbmcplugin.addDirectoryItem(handle=int(sys.argv[1]),url=u,listitem=liz)
         return ok
 
 
@@ -85,6 +90,10 @@ elif mode==1:
 elif mode==2:
         print ""+url
         VIDEOLINKS(url,name)
+
+elif mode==3:
+	print ""+url
+	resolveVideoLink(sys.argv[2],url)
 
 
 
