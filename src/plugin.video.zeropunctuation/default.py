@@ -13,9 +13,8 @@ def VIDEOLINKS(url,name):
         
 def resolveVideoLink(plugin_path,url):
 	video_url=scraper.scrapeVideoLink(url)
-	listitem = xbmcgui.ListItem(path=plugin_path)
-	listItem.setPath(video_url)
-	xbmcplugin.setResolvedUrl(int(sys.argv[1]), True, listitem)
+	listitem = xbmcgui.ListItem(path=video_url)
+	return xbmcplugin.setResolvedUrl(int(sys.argv[1]), True, listitem)
 
                 
 def get_params():
