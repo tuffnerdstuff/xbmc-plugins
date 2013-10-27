@@ -74,7 +74,7 @@
 
 <addon id="plugin.video.zeropunctuation"
 	   name="Zero Punctuation"
-	   version="0.11"
+	   version="0.12"
 	   provider-name="tuffnerdstuff">
   <requires>
     <import addon="xbmc.python" version="2.1.0"/>
