@@ -1,17 +1,11 @@
 import urllib,urllib2,re,xbmcplugin,xbmcgui,scraper
 
 URL= 'http://www.escapistmagazine.com/videos/view/zero-punctuation'
-
-def CATEGORIES():
-        addDir('Zero Punctuation',URL,1,'')
                        
-def INDEX(url):
+def buildVideoIndex(url):
         data=scraper.scrape(url)
         for name,info_url,img,date in data:
-                addLink(name,info_url,2,img)
-
-def VIDEOLINKS(url,name):
-        addLink(name,url,3,'')
+                addLink(name,info_url,3,img)
         
 def resolveVideoLink(url):
 	video_url=scraper.scrapeVideoLink(url)
@@ -85,17 +79,9 @@ print "URL: "+str(url)
 print "Name: "+str(name)
 
 if mode==None or url==None or len(url)<1:
-#        print "[CATEGORIES]"
-#        CATEGORIES()
-       
-#elif mode==1:
-        print "[IDNEX]"
-        INDEX(URL)
+        print "[INDEX]"
+        buildVideoIndex(URL)
         
-elif mode==2:
-        print "[VIDEOLINKS] "+url
-        VIDEOLINKS(url,name)
-
 # After the video has been selected, the actual video url is resolved
 elif mode==3:
 	print "[RESOLVEURL] "+url
