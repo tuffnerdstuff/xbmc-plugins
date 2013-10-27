@@ -11,9 +11,10 @@ def INDEX(url):
 def VIDEOLINKS(url,name):
         addLink(name,url,3,'')
         
-def resolveVideoLink(plugin_path,url):
+def resolveVideoLink(url):
 	video_url=scraper.scrapeVideoLink(url)
 	listitem = xbmcgui.ListItem(path=video_url)
+	print "[RESOLVEURL]" + video_url
 	return xbmcplugin.setResolvedUrl(int(sys.argv[1]), True, listitem)
 
                 
@@ -79,20 +80,20 @@ print "URL: "+str(url)
 print "Name: "+str(name)
 
 if mode==None or url==None or len(url)<1:
-        print ""
+        print "[CATEGORIES]"
         CATEGORIES()
        
 elif mode==1:
-        print ""+url
+        print "[IDNEX] "+url
         INDEX(url)
         
 elif mode==2:
-        print ""+url
+        print "[VIDEOLINKS] "+url
         VIDEOLINKS(url,name)
 
 elif mode==3:
-	print ""+url
-	resolveVideoLink(sys.argv[2],url)
+	print "[RESOLVEURL] "+url
+	resolveVideoLink(url)
 
 
 
