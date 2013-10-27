@@ -1,12 +1,14 @@
 import urllib,urllib2,re,xbmcplugin,xbmcgui,scraper
 
+URL= 'http://www.escapistmagazine.com/videos/view/zero-punctuation'
+
 def CATEGORIES():
-        addDir('Zero Punctuation','http://www.escapistmagazine.com/videos/view/zero-punctuation',1,'')
+        addDir('Zero Punctuation',URL,1,'')
                        
 def INDEX(url):
         data=scraper.scrape(url)
         for name,info_url,img,date in data:
-                addDir(name,info_url,2,img)
+                addLink(name,info_url,2,img)
 
 def VIDEOLINKS(url,name):
         addLink(name,url,3,'')
@@ -44,6 +46,8 @@ def addLink(name,url,mode,iconimage):
 	ok=True
         liz=xbmcgui.ListItem(name, iconImage="DefaultVideo.png", thumbnailImage=iconimage)
         liz.setInfo( type="Video", infoLabels={ "Title": name } )
+	# This property must be set or otherwise there will be no handle set when the video is selected
+	# and setResolvedUrl will fail (invalid handle!)
 	liz.setProperty('IsPlayable', 'true')
         ok=xbmcplugin.addDirectoryItem(handle=int(sys.argv[1]),url=u,listitem=liz)
         return ok
@@ -81,21 +85,21 @@ print "URL: "+str(url)
 print "Name: "+str(name)
 
 if mode==None or url==None or len(url)<1:
-        print "[CATEGORIES]"
-        CATEGORIES()
+#        print "[CATEGORIES]"
+#        CATEGORIES()
        
-elif mode==1:
-        print "[IDNEX] "+url
-        INDEX(url)
+#elif mode==1:
+        print "[IDNEX]"
+        INDEX(URL)
         
 elif mode==2:
         print "[VIDEOLINKS] "+url
         VIDEOLINKS(url,name)
 
+# After the video has been selected, the actual video url is resolved
 elif mode==3:
 	print "[RESOLVEURL] "+url
 	resolveVideoLink(url)
-
 
 
 if mode < 3: xbmcplugin.endOfDirectory(int(sys.argv[1]))
