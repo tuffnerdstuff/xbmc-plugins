@@ -4,7 +4,7 @@ URL= 'http://www.escapistmagazine.com/videos/view/zero-punctuation'
                        
 def buildVideoIndex(url):
         data=scraper.scrape(url)
-	nextLinkUrl=scraper.scrapeNextPageLink()
+	nextLinkUrl=scraper.scrapeNextPageLink(url)
         for name,info_url,img,date in data:
                 addLink(name,info_url,3,img)
 	if (nextLinkUrl != None):
