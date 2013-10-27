@@ -17,9 +17,10 @@ def scrape(url):
 	link = readPage(url)
 
 	main_content = re.compile("<div id=\'gallery_display\'>(.*?)<div id=\'recent_site\'", re.MULTILINE).findall(link)[0]
-	pattern="<div class=\'filmstrip_video\'><a href=\'(.*?)\'><img src=\'(.*?)\'></a><div class=\'title\'><i>(.*?)</i></div><div class=\'date\'>Date: (..)/(..)/(....)</div>"
+	pattern="<div class=\'filmstrip_video\'><a href=\'(.*?)\'><img src=\'(.*?)\'></a><div class=\'title\'>(.*?)</div><div class=\'date\'>Date: (..)/(..)/(....)</div>"
         match=re.compile(pattern, re.MULTILINE).findall(main_content)
         for url,img,name,month,day,year in match:
+		name=re.sub('<.*?>','',name)
 		data.append((name,url,img,"%s-%s-%s"%(year,month,day)))
 	return data
 
@@ -33,5 +34,18 @@ def scrapeVideoLink(url):
 	match=re.compile(link_pattern, re.MULTILINE).findall(html_json)
 	return match[1]
 
-print scrape(URL)
-print scrapeVideoLink(VIDEO_URL)
+def scrapeNextPageLink(url):
+	html = readPage(url)
+	pattern = "class=\'active\'>\d+?</a><a href=\'(.*?page=\d+?)\'>"
+	match = re.compile(pattern, re.MULTILINE).findall(html)
+	if len(match) > 0:
+		return match[0]
+	else:
+		return None
+
+print "Video Infos: " + str(scrape(URL))
+print ""
+print "Next Info URL: " + str(scrapeNextPageLink(URL))
+print ""
+print "Video URL: " + scrapeVideoLink(VIDEO_URL)
+

@@ -4,8 +4,11 @@ URL= 'http://www.escapistmagazine.com/videos/view/zero-punctuation'
                        
 def buildVideoIndex(url):
         data=scraper.scrape(url)
+	nextLinkUrl=scraper.scrapeNextPageLink()
         for name,info_url,img,date in data:
                 addLink(name,info_url,3,img)
+	if (nextLinkUrl != None):
+		addDir("[Next Page >>]",nextLinkUrl,2,'')
         
 def resolveVideoLink(url):
 	video_url=scraper.scrapeVideoLink(url)
@@ -81,6 +84,10 @@ print "Name: "+str(name)
 if mode==None or url==None or len(url)<1:
         print "[INDEX]"
         buildVideoIndex(URL)
+
+if mode==2:
+	print "[INDEX] url: " + url
+	buildVideoIndex(url)
         
 # After the video has been selected, the actual video url is resolved
 elif mode==3:
