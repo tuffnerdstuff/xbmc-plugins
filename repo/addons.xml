@@ -1,75 +1,26 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <addons>
-<addon id="plugin.video.sandbox"
-	   name="Sandbox Plugin"
-	   version="0.2"
-	   provider-name="tuffnerdstuff">
-  <requires>
-    <import addon="xbmc.python" version="2.1.0"/>
-  </requires>
-  <extension point="xbmc.python.pluginsource"
-			 library="default.py">
-    	<provides>video</provides>
-  </extension>
-  <extension point="xbmc.addon.metadata">
-    <summary>A Sandbox Plugin</summary>
-    <description>A Plugin to test out stuff</description>
-    <platform>all</platform>
-  </extension>
-</addon>
-
-<addon id="plugin.video.vox.now"
-	   name="VOX now"
-	   version="1.1"
-	   provider-name="tuffnerdstuff">
-  <requires>
-    <import addon="xbmc.python" version="2.1.0"/>
-  </requires>
-  <extension point="xbmc.python.pluginsource"
-			 library="default.py">
-    	<provides>video</provides>
-  </extension>
-  <extension point="xbmc.addon.metadata">
-    <summary>VOX now : german free stream content</summary>
-    <description>Provides access to VOX on demand streams. This code has been forked from the code provided on phreekz.de</description>
-    <platform>all</platform>
-  </extension>
-</addon>
-
-<addon id="plugin.video.rtl2.now"
-	   name="RTL2 now"
-	   version="1.1"
-	   provider-name="tuffnerdstuff">
-  <requires>
-    <import addon="xbmc.python" version="2.1.0"/>
-  </requires>
-  <extension point="xbmc.python.pluginsource"
-			 library="default.py">
-    	<provides>video</provides>
-  </extension>
-  <extension point="xbmc.addon.metadata">
-    <summary>SuperRTL now : german free stream content</summary>
-    <description>Provides access to RTL2 on demand streams. This code has been forked from the code provided on phreekz.de</description>
-    <platform>all</platform>
-  </extension>
-</addon>
-
-<addon id="plugin.video.superrtl.now"
-	   name="SuperRTL now"
-	   version="1.1"
-	   provider-name="tuffnerdstuff">
-  <requires>
-    <import addon="xbmc.python" version="2.1.0"/>
-  </requires>
-  <extension point="xbmc.python.pluginsource"
-			 library="default.py">
-    	<provides>video</provides>
-  </extension>
-  <extension point="xbmc.addon.metadata">
-    <summary>SuperRTL now : german free stream content</summary>
-    <description>Provides access to SuperRTL on demand streams. This code has been forked from the code provided on phreekz.de</description>
-    <platform>all</platform>
-  </extension>
+<addon id="plugin.video.rtl_now" name="NOW" version="1.1.2" provider-name="AddonScriptorDE">
+    <requires>
+        <import addon="xbmc.python" version="2.1.0"/>
+    </requires>
+    <extension point="xbmc.python.pluginsource" library="default.py">
+        <provides>video</provides>
+    </extension>
+    <extension point="xbmc.addon.metadata">
+        <platform>all</platform>
+        <summary lang="en">RTL, RTL2, VOX, RTL Nitro, Super RTL and n-tv media library (Forked from AddonScriptorDE)</summary>
+        <summary lang="de">RTL, RTL2, VOX, RTL Nitro, Super RTL und n-tv Mediathek (Forked from AddonScriptorDE)</summary>
+        <language>de</language>
+        <description lang="en">RTL, RTL2, VOX, RTL Nitro, Super RTL and n-tv media library (Forked from AddonScriptorDE)</description>
+        <description lang="de">RTL, RTL2, VOX, RTL Nitro, Super RTL und n-tv Mediathek (Forked from AddonScriptorDE)</description>
+        <disclaimer lang="en">Some parts of this addon may not be legal in your country of residence - please check with your local laws before installing.</disclaimer>
+        <license>GNU GENERAL PUBLIC LICENSE. Version 2, June 1991</license>
+        <source></source>
+        <forum></forum>
+        <email></email>
+        <website></website>
+    </extension>
 </addon>
 
 <addon id="plugin.video.zeropunctuation"
@@ -108,6 +59,24 @@
   </extension>
 </addon>
 
+<addon id="plugin.video.rtl2.now"
+	   name="RTL2 now"
+	   version="1.1"
+	   provider-name="tuffnerdstuff">
+  <requires>
+    <import addon="xbmc.python" version="2.1.0"/>
+  </requires>
+  <extension point="xbmc.python.pluginsource"
+			 library="default.py">
+    	<provides>video</provides>
+  </extension>
+  <extension point="xbmc.addon.metadata">
+    <summary>SuperRTL now : german free stream content</summary>
+    <description>Provides access to RTL2 on demand streams. This code has been forked from the code provided on phreekz.de</description>
+    <platform>all</platform>
+  </extension>
+</addon>
+
   <addon id="repository.tuffnerdstuff" name="tuffnerdstuff's repo" version="1.5.1" provider-name="Tuff Nerdstuff">
     <extension point="xbmc.addon.repository" name="tuffnerdstuff's repo">
     <info compressed="false">https://raw.github.com/tuffnerdstuff/xbmc-plugins/master/repo/addons.xml</info>
@@ -120,4 +89,58 @@
 		<platform>all</platform>
     </extension>
   </addon>
+
+<addon id="plugin.video.vox.now"
+	   name="VOX now"
+	   version="1.1"
+	   provider-name="tuffnerdstuff">
+  <requires>
+    <import addon="xbmc.python" version="2.1.0"/>
+  </requires>
+  <extension point="xbmc.python.pluginsource"
+			 library="default.py">
+    	<provides>video</provides>
+  </extension>
+  <extension point="xbmc.addon.metadata">
+    <summary>VOX now : german free stream content</summary>
+    <description>Provides access to VOX on demand streams. This code has been forked from the code provided on phreekz.de</description>
+    <platform>all</platform>
+  </extension>
+</addon>
+
+<addon id="plugin.video.sandbox"
+	   name="Sandbox Plugin"
+	   version="0.2"
+	   provider-name="tuffnerdstuff">
+  <requires>
+    <import addon="xbmc.python" version="2.1.0"/>
+  </requires>
+  <extension point="xbmc.python.pluginsource"
+			 library="default.py">
+    	<provides>video</provides>
+  </extension>
+  <extension point="xbmc.addon.metadata">
+    <summary>A Sandbox Plugin</summary>
+    <description>A Plugin to test out stuff</description>
+    <platform>all</platform>
+  </extension>
+</addon>
+
+<addon id="plugin.video.superrtl.now"
+	   name="SuperRTL now"
+	   version="1.1"
+	   provider-name="tuffnerdstuff">
+  <requires>
+    <import addon="xbmc.python" version="2.1.0"/>
+  </requires>
+  <extension point="xbmc.python.pluginsource"
+			 library="default.py">
+    	<provides>video</provides>
+  </extension>
+  <extension point="xbmc.addon.metadata">
+    <summary>SuperRTL now : german free stream content</summary>
+    <description>Provides access to SuperRTL on demand streams. This code has been forked from the code provided on phreekz.de</description>
+    <platform>all</platform>
+  </extension>
+</addon>
 </addons>
